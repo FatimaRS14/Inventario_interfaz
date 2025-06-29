@@ -1,0 +1,14 @@
+<div class="sidebar d-flex flex-column" [class.open]="sidebarOpen">
+  <h4 class="mb-4">Inventario</h4>
+  <nav class="nav flex-column">
+    <a class="nav-link" routerLink="/listar" routerLinkActive="active">Listar productos</a>
+    <a class="nav-link" routerLink="/guardar" routerLinkActive="active">Añadir productos</a>
+    <a class="nav-link" routerLink="/proveedores" routerLinkActive="active">Proveedores</a>
+  </nav>
+</div>
+
+<app-topbar></app-topbar>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

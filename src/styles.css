@@ -74,6 +74,25 @@ body {
   color: var(--badge-text);
 }
 
+.btn-add {
+  background-color: var(--color-secundario);
+  color: white;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: transparent;
+  color: black;
+  cursor: pointer; 
+}
+
 .btn-edit {
   background-color: var(--color-primario);
   color: white;
@@ -176,3 +195,9 @@ main {
   .search-input input::placeholder {
     color: #6c757d;
   }
+
+  .search-input input:focus {
+  border: 1px solid #f79eff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(247, 158, 255, 0.3); 
+}

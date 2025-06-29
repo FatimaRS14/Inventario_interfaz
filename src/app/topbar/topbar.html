@@ -1,0 +1,29 @@
+<div class="topbar d-flex justify-content-between align-items-center">
+
+  <!-- Para la ruta /listar -->
+  <ng-container *ngIf="currentUrl === '/listar'">
+    <div class="search-input">
+      <i class="bi bi-search-heart"></i>
+      <input type="text" placeholder="Buscar producto..">
+    </div>
+    <div>
+      <button class="btn-add">
+        <i class="bi bi-file-earmark-plus"></i> Guardar producto
+      </button>
+    </div>
+  </ng-container>
+  <!--Para la ruta/guardar-->
+  <ng-container *ngIf="currentUrl === '/guardar'">
+    <h2>Añadir producto</h2>
+    <div>
+      <button class="btn-add">
+        <i class="bi bi-file-earmark-plus"></i> Guardar producto
+      </button>
+    </div>
+  </ng-container>
+
+  <!-- Para la ruta /editar -->
+  <ng-container *ngIf="currentUrl === '/editar'">
+    <h2>Editar Producto</h2>
+  </ng-container>
+</div>

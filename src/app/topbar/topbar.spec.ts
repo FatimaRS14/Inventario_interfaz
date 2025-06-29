@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Eliminar } from './eliminar';
+import { Topbar } from './topbar';
 
-describe('Eliminar', () => {
-  let component: Eliminar;
-  let fixture: ComponentFixture<Eliminar>;
+describe('Topbar', () => {
+  let component: Topbar;
+  let fixture: ComponentFixture<Topbar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Eliminar]
+      imports: [Topbar]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Eliminar);
+    fixture = TestBed.createComponent(Topbar);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
