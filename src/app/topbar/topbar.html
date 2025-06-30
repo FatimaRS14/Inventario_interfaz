@@ -2,28 +2,21 @@
 
   <!-- Para la ruta /listar -->
   <ng-container *ngIf="currentUrl === '/listar'">
+    <div>
+        <h2 class="mb-4 text-center">Lista de productos</h2>
+    </div>
     <div class="search-input">
       <i class="bi bi-search-heart"></i>
       <input type="text" placeholder="Buscar producto..">
     </div>
-    <div>
-      <button class="btn-add">
-        <i class="bi bi-file-earmark-plus"></i> Guardar producto
-      </button>
-    </div>
   </ng-container>
   <!--Para la ruta/guardar-->
   <ng-container *ngIf="currentUrl === '/guardar'">
-    <h2>Añadir producto</h2>
-    <div>
-      <button class="btn-add">
-        <i class="bi bi-file-earmark-plus"></i> Guardar producto
-      </button>
-    </div>
+    <h2 class="mb-4 text-center">Añadir producto</h2>
   </ng-container>
 
   <!-- Para la ruta /editar -->
   <ng-container *ngIf="currentUrl === '/editar'">
-    <h2>Editar Producto</h2>
+    <h2 class="mb-4 text-center">Editar Producto</h2>
   </ng-container>
 </div>

@@ -1,1 +1,53 @@
-<p>editar works!</p>
+<form class="p-4 rounded shadow" style="max-width: 1000px; margin: auto; background-color: #fff;" (ngSubmit)="editar()">
+  <h4 class="mb-4 text-center">Editar Producto</h4>
+
+  <div class="row mb-3">
+    <div class="col-6">
+      <label for="idProducto" class="form-label">Id Producto</label>
+      <input type="text" class="form-control" id="idProducto" name="idProducto" [(ngModel)]="i.idProducto" disabled readonly>
+    </div>
+    <div class="col-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="i.nombre" placeholder="Nombre del producto" required>
+    </div>
+    <div class="col-6">
+      <label for="marca" class="form-label">Marca</label>
+      <input type="text" class="form-control" id="marca" name="marca" [(ngModel)]="i.marca" placeholder="Marca del producto" required>
+    </div>
+    <div class="col-6">
+      <label for="modelo" class="form-label">Modelo</label>
+      <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="i.modelo" placeholder="Modelo del producto" required>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-6">
+      <label for="precio" class="form-label">Precio</label>
+      <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="i.precio" placeholder="Precio en MXN" step="0.01" required>
+    </div>
+    <div class="col-6">
+      <label for="stock" class="form-label">Stock</label>
+      <input type="number" class="form-control" id="stock" name="stock" [(ngModel)]="i.stock" placeholder="Cantidad en stock" required>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-12">
+     <label for="provIdSolo" class="form-label">Proveedor</label>
+     <p>Proveedor actual: {{i.proveedorId}}</p>
+      <select [(ngModel)]='i.proveedorId' 
+              name="provIdSolo" 
+              class="form-select" 
+              required>
+        <option value="" disabled selected>  -- Selecciona un proveedor --</option>
+        <option *ngFor="let p of prov" [value]="p.idProveedor">
+          {{ p.nombre }} {{ p.apellido }} - {{ p.empresa }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-add">Editar Producto</button>
+  </div>
+</form>

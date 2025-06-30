@@ -2,7 +2,8 @@
   --color-primario: #a86cfd;
   --color-secundario: #f79eff;
   --titulo-color: #240231;
-  --text-color: #2b1a31;
+  --sub-title: #500f4d; 
+  --text-color: #3e1f49;
   --search-bar: #ecc6ed;
   --background-fondo: #fff2fd;
   --eliminar-button: #a111a3;
@@ -136,6 +137,13 @@ h1 {
   line-height: 100%;
   letter-spacing: -0.125rem;
   margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+h2{
+  color: var(--sub-title);
   font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";

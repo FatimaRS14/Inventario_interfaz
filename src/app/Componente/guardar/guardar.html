@@ -1,40 +1,46 @@
+<form class="p-4 rounded shadow" style="max-width: 1000px; margin: auto; background-color: #fff;" (ngSubmit)="guardar()" #f="ngForm">
+  <h4 class="mb-4 text-center">Añadir Producto</h4>
 
-    <form class="p-4 rounded shadow" style="max-width: 600px; margin: auto; background-color: #fff;">
-        <h4 class="mb-4 text-center">Añadir Producto</h4>
+  <div class="row mb-3">
+    <div class="col-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" name="nombre" [(ngModel)]="i.nombre" placeholder="Nombre del producto" required>
+    </div>
+    <div class="col-6">
+      <label for="marca" class="form-label">Marca</label>
+      <input type="text" class="form-control" name="marca" [(ngModel)]="i.marca"  placeholder="Marca del producto" required>
+    </div>
+  </div>
 
-        <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre del producto" required>
-        </div>
+  <div class="row mb-3">
+    <div class="col-6">
+      <label for="modelo" class="form-label">Modelo</label>
+      <input type="text" class="form-control" name="modelo" [(ngModel)]="i.modelo" placeholder="Modelo del producto" required>
+    </div>
+    <div class="col-6">
+      <label for="precio" class="form-label">Precio</label>
+      <input type="number" class="form-control" name="precio" [(ngModel)]="i.precio" placeholder="Precio en MXN" step="0.01" required>
+    </div>
+  </div>
 
-        <div class="mb-3">
-            <label for="marca" class="form-label">Marca</label>
-            <input type="text" class="form-control" id="marca" placeholder="Marca del producto" required>
-        </div>
+  <div class="row mb-3">
+    <div class="col-6">
+      <label for="stock" class="form-label">Stock</label>
+      <input type="number" class="form-control" name="stock" [(ngModel)]="i.stock" placeholder="Cantidad en stock" required>
+    </div>
+    
+    <div class="col-6">
+      <label for="proveedor" class="form-label">Proveedor</label>
+      <select [(ngModel)]="i.proveedorId" name="proveedorId" class="form-select" required>
+        <option [ngValue]="null" disabled selected>-- Selecciona un proveedor --</option>
+        <option *ngFor="let p of proveedor" [value]="p.idProveedor">
+          {{ p.nombre }} {{ p.apellido }} - {{ p.empresa }}
+        </option>
+      </select>
+    </div>
+  </div>
 
-        <div class="mb-3">
-            <label for="modelo" class="form-label">Modelo</label>
-            <input type="text" class="form-control" id="modelo" placeholder="Modelo del producto" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="precio" class="form-label">Precio</label>
-            <input type="number" class="form-control" id="precio" placeholder="Precio en MXN" step="0.01" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="stock" class="form-label">Stock</label>
-            <input type="number" class="form-control" id="stock" placeholder="Cantidad en stock" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="proveedorId" class="form-label">ID del Proveedor</label>
-            <input type="text" class="form-control" id="proveedorId" placeholder="Ej. PR001" required>
-        </div>
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-add">Añadir Producto</button>
-        </div>
-        </form>
-  
-
+  <div class="text-center">
+    <button type="submit" class="btn btn-add">Añadir Producto</button>
+  </div>
+</form>
