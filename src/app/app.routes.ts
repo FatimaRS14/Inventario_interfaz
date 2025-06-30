@@ -3,6 +3,7 @@ import { Guardar } from './Componente/guardar/guardar';
 import { Editar } from './Componente/editar/editar';
 import { Layout } from './layout/layout';
 import { Listar } from './Componente/listar/listar';
+import { ListarP } from './Componente/listar-p/listar-p';
 
 export const routes: Routes = [{
     path: '',
@@ -23,6 +24,10 @@ export const routes: Routes = [{
         {
             path: '', redirectTo: 'listar', 
             pathMatch: 'full'
+        },
+        {
+            path: 'listarP',
+            component:ListarP
         }
     ]
 }

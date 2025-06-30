@@ -5,10 +5,6 @@
     <div>
         <h2 class="mb-4 text-center">Lista de productos</h2>
     </div>
-    <div class="search-input">
-      <i class="bi bi-search-heart"></i>
-      <input type="text" placeholder="Buscar producto..">
-    </div>
   </ng-container>
   <!--Para la ruta/guardar-->
   <ng-container *ngIf="currentUrl === '/guardar'">
@@ -18,5 +14,10 @@
   <!-- Para la ruta /editar -->
   <ng-container *ngIf="currentUrl === '/editar'">
     <h2 class="mb-4 text-center">Editar Producto</h2>
+  </ng-container>
+
+  <!-- Para la ruta /listarP -->
+  <ng-container *ngIf="currentUrl === '/listarP'">
+    <h2 class="mb-4 text-center">Listar Proveedores</h2>
   </ng-container>
 </div>

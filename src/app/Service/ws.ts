@@ -28,6 +28,15 @@ export class Ws {
     return this.http.put<Inventario>(this.url+ "/editar", i);
   }
 
+  eliminar(id: number) {
+    return this.http.delete<void>(`${this.url}/eliminar?idInventario=${id}`);
+  }
+
+  porMarca(marca: string) {
+  return this.http.get<Inventario[]>(this.url + '/marca/' + marca);
+}
+
+
   urlp = "http://localhost:9000/prov";
   listarP() {
   return this.http.get<Proveedor[]>(this.urlp + "/listar");

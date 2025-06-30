@@ -1,1 +1,31 @@
-<p>listar-p works!</p>
+<div class="d-flex justify-content-between mb-3">
+  <div class="search-input">
+      <i class="bi bi-search-heart"></i>
+     <input
+        type="text"
+        placeholder="Buscar proveedor por empresa"
+        [(ngModel)]="filtro"
+        (input)="filtrarProveedor()"
+      />
+    </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id Proveedor</th>
+      <th>Nombre del proveedor</th>
+      <th>Apellido</th>
+      <th>Empresa</th>
+      <th>Correo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of provFiltrados">
+      <td>{{ p.idProveedor }}</td>
+      <td>{{ p.nombre }}</td>
+      <td>{{ p.apellido }}</td>
+      <td>{{ p.empresa}}</td>
+      <td>{{ p.correo }}</td>
+  </tbody>
+</table>
