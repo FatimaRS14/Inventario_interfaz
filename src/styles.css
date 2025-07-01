@@ -1,10 +1,10 @@
 :root {
   --color-primario: #a86cfd;
-  --color-secundario: #f79eff;
+  --color-secundario: #e070eb;
   --titulo-color: #240231;
   --sub-title: #500f4d; 
   --text-color: #3e1f49;
-  --search-bar: #ecc6ed;
+  --search-bar: #cc50cc;
   --background-fondo: #fff2fd;
   --eliminar-button: #a111a3;
 
@@ -209,3 +209,80 @@ main {
   outline: none;
   box-shadow: 0 0 0 3px rgba(247, 158, 255, 0.3); 
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* .white-table {
+  background-color: #fff !important;
+  color: #333 !important;
+} */
+
+/* Asegura visibilidad del input y label dentro de mat-form-field */
+table.mat-form-field,
+table.mat-input-element,
+table.mat-form-field-label {
+  color: var(--text-color) !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: var(--border-light);
+}
+
+.mat-input-element {
+  background-color: #fff !important;
+  border-radius: 4px;
+}
+
+/* Iconos dentro de los mat-form-field */
+.mat-icon {
+  color: var(--text-color);
+}
+
+table.mat-table {
+  background-color: #fff !important;
+  color: var(--text-color) !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+::ng-deep .mat-header-cell, 
+::ng-deep .mat-cell {
+  color: var(--text-color) !important;
+}
+
+form {
+  background-color: #fff !important;
+  color: var(--text-color);
+}
+
+form h4 {
+  color: var(--titulo-color);
+}
+
+button.mat-button, button.mat-raised-button {
+  color: white;
+}
+
+button.mat-button.btn-add:hover {
+  background-color: #f0c1ff; 
+}
+
+.mat-input-element {
+  color: var(--text-color) !important;
+  background-color: white !important;
+}
+
+.col-id-text {
+  color: var(--text-color) !important;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.col-id-subtext {
+  color: #af2e9e!important;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+

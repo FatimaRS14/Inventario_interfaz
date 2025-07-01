@@ -18,6 +18,8 @@ export class ListarP implements OnInit{
   prov !: Proveedor[];
   provFiltrados: Proveedor[] = [];
   filtro: string = '';
+  productos: any[] = [];
+  proveedorSelect?: Proveedor;
 
   ngOnInit(): void {
     this.provListar();
@@ -48,5 +50,22 @@ export class ListarP implements OnInit{
       );
     }
   }
+
+  verProductos(idProveedor: number) {
+    console.log('ID proveedor recibido:', idProveedor);
+
+    this.service.productos(idProveedor).subscribe({
+      next: (respuesta) => {
+        console.log('Respuesta productos:', respuesta);
+        this.productos = respuesta.Productos || []; 
+        this.proveedorSelect = respuesta.Proveedor; 
+      },
+      error: (error) => {
+        console.error('Error al obtener productos:', error);
+      }
+    });
+  }
+
+
 
 }

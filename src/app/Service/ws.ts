@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Inventario } from '../Componente/Inventario/inventario';
 import { Proveedor } from '../Componente/Proveedores/proveedores';
+import { Gerente } from '../Componente/Gerente/gerente';
 
 @Injectable({
   providedIn: 'root'
@@ -45,4 +46,33 @@ export class Ws {
   buscarP(id:number){
     return this.http.get<Proveedor>(`${this.urlp}/buscar/${id}`)
   }
+
+  productos(id:number){
+    return this.http.get<any>(`${this.urlp}/productos/${id}`)
+  }
+
+  urlg ="http://localhost:9000/gerente";
+
+  listarG(){
+    return this.http.get<Gerente[]>(this.urlg + "/listar");
+  }
+
+  guardarG(g: Gerente){
+    return this.http.post<Gerente[]>(this.urlg + "/guardar", g);
+  }
+
+  buscarG(g: Gerente){
+    return this.http.post<Gerente>(this.urlg + "/buscar", g);
+  }
+
+  editarG(g: Gerente){
+    return this.http.put<String>(this.urlg + "/editar", g);
+  }
+
+  eliminarG(g: Gerente){
+    return this.http.delete<void>(this.urlg + "/eliminar",{
+      body :g
+    });
+  }
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Ws } from '../../Service/ws';
 import { Inventario } from '../Inventario/inventario';
 import { CommonModule } from '@angular/common';
@@ -20,7 +20,7 @@ export class Listar implements OnInit{
   producto !: Inventario[];
   productosFiltrados: Inventario[] = [];
   filtro: string = '';
-
+  
   ngOnInit(): void {
     console.log('Componente inicializado');
     this.activarListar();

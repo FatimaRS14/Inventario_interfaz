@@ -18,6 +18,7 @@
       <th>Apellido</th>
       <th>Empresa</th>
       <th>Correo</th>
+      <th>Acción</th>
     </tr>
   </thead>
   <tbody>
@@ -27,5 +28,34 @@
       <td>{{ p.apellido }}</td>
       <td>{{ p.empresa}}</td>
       <td>{{ p.correo }}</td>
+      <td>
+        <button class="btn btn-edit me-2" (click)="verProductos(p.idProveedor!)">
+          <i class="bi bi-box2-heart-fill"></i> Ver productos
+        </button>
+      </td>
   </tbody>
 </table>
+<div *ngIf="productos.length > 0">
+  <h3>Productos del proveedor: {{ proveedorSelect?.empresa }}</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID Producto</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{ producto.idProducto }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.marca }}</td>
+        <th>{{ producto.modelo }}</th>
+        <td>{{ producto.precio | currency:'USD' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
